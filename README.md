@@ -2,7 +2,7 @@
 [![](https://img.shields.io/github/issues-raw/kwkhaw/SwiftAnyPic.svg)]()
 [![GitHub license](https://img.shields.io/github/license/kwkhaw/SwiftAnyPic.svg)]()
 
-# SwiftAnyPic
+# SwiftAnyItem
 Swift port of AnyPic project [https://github.com/ParsePlatform/Anypic](https://github.com/ParsePlatform/Anypic)
 
 ## Requirements
