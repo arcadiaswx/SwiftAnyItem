@@ -15,7 +15,8 @@ pod 'FormatterKit', '~> 1.8.0'
 pod 'UIImageEffects', '~> 0.0.1'
 pod 'UIImageAFAdditions', :git => 'https://github.com/teklabs/UIImageAFAdditions.git'
 pod 'Synchronized', '~> 2.0.0'
-
+  pod 'AHKActionSheet', '~> 0.5'
+   pod 'AMPopTip', '~> 0.7'
 end
 
 target 'SwiftAnyItemTests' do

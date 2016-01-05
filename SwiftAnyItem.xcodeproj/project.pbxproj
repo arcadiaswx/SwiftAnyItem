@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		7AF40C9DF6B93A628923B25B /* Pods_SwiftAnyItem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FA8F70D05A191B789F9266 /* Pods_SwiftAnyItem.framework */; };
+		A64704571C3B6847006541DA /* PAPItemTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64704561C3B6847006541DA /* PAPItemTimelineViewController.swift */; };
+		A64704591C3C1338006541DA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64704581C3C1338006541DA /* SettingsViewController.swift */; };
+		A647045D1C3C2F8F006541DA /* ComplexConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A647045B1C3C2F8F006541DA /* ComplexConstants.swift */; };
+		A647045E1C3C2F8F006541DA /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A647045C1C3C2F8F006541DA /* Globals.swift */; };
+		A64704601C3C3050006541DA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A647045F1C3C3050006541DA /* Colors.swift */; };
+		A64704621C3C3226006541DA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64704611C3C3226006541DA /* Extensions.swift */; };
+		A64704641C3C326A006541DA /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64704631C3C326A006541DA /* NotificationHelper.swift */; };
 		C81E05401B73AC79004E781D /* PAPSettingsButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E053F1B73AC79004E781D /* PAPSettingsButtonItem.swift */; };
 		C81E05431B73B6F2004E781D /* PAPFindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E05421B73B6F2004E781D /* PAPFindFriendsViewController.swift */; };
 		C81E05451B73B923004E781D /* PAPFindFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E05441B73B923004E781D /* PAPFindFriendsCell.swift */; };
@@ -63,6 +70,13 @@
 		1B16EDC73F5B3D74DA725DD9 /* Pods-SwiftAnyItem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAnyItem.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftAnyItem/Pods-SwiftAnyItem.release.xcconfig"; sourceTree = "<group>"; };
 		28FB677C87F8FDDB4C0346D2 /* Pods-SwiftAnyItem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAnyItem.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftAnyItem/Pods-SwiftAnyItem.debug.xcconfig"; sourceTree = "<group>"; };
 		8449F14195DB7832B3D99A0B /* Pods-SwiftAnyItem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAnyItem.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftAnyItem/Pods-SwiftAnyItem.release.xcconfig"; sourceTree = "<group>"; };
+		A64704561C3B6847006541DA /* PAPItemTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPItemTimelineViewController.swift; sourceTree = "<group>"; };
+		A64704581C3C1338006541DA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A647045B1C3C2F8F006541DA /* ComplexConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexConstants.swift; sourceTree = "<group>"; };
+		A647045C1C3C2F8F006541DA /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		A647045F1C3C3050006541DA /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		A64704611C3C3226006541DA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A64704631C3C326A006541DA /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		C81E053F1B73AC79004E781D /* PAPSettingsButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPSettingsButtonItem.swift; sourceTree = "<group>"; };
 		C81E05421B73B6F2004E781D /* PAPFindFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPFindFriendsViewController.swift; sourceTree = "<group>"; };
 		C81E05441B73B923004E781D /* PAPFindFriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPFindFriendsCell.swift; sourceTree = "<group>"; };
@@ -149,9 +163,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A647045A1C3C1432006541DA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A64704631C3C326A006541DA /* NotificationHelper.swift */,
+				A64704611C3C3226006541DA /* Extensions.swift */,
+				A647045F1C3C3050006541DA /* Colors.swift */,
+				A647045B1C3C2F8F006541DA /* ComplexConstants.swift */,
+				A647045C1C3C2F8F006541DA /* Globals.swift */,
+				C8481A441B70F31300E55085 /* PAPUtility.swift */,
+				C89DE1691B6A63F0004064C0 /* PAPConstants.swift */,
+				C8CED75E1B6FBB9A006B6972 /* PAPCache.swift */,
+				C8EAA8021B697F7300711A04 /* Reachability.swift */,
+				C8EAA7FF1B6971DF00711A04 /* SwiftAnyItem-Bridging-Header.h */,
+			);
+			name = "Support Files";
+			path = Support;
+			sourceTree = "<group>";
+		};
 		C81E05411B73B6D5004E781D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				A64704581C3C1338006541DA /* SettingsViewController.swift */,
 				C81E05421B73B6F2004E781D /* PAPFindFriendsViewController.swift */,
 			);
 			name = Settings;
@@ -264,11 +297,7 @@
 				C8EAA80A1B6986AE00711A04 /* Views */,
 				C8EAA8041B6985BC00711A04 /* Controllers */,
 				C8EAA7D11B696E7800711A04 /* AppDelegate.swift */,
-				C89DE1691B6A63F0004064C0 /* PAPConstants.swift */,
-				C8481A441B70F31300E55085 /* PAPUtility.swift */,
-				C8CED75E1B6FBB9A006B6972 /* PAPCache.swift */,
-				C8EAA8021B697F7300711A04 /* Reachability.swift */,
-				C8EAA7FF1B6971DF00711A04 /* SwiftAnyItem-Bridging-Header.h */,
+				A647045A1C3C1432006541DA /* Support Files */,
 				C8EAA7D81B696E7800711A04 /* Assets.xcassets */,
 				C8EAA7DD1B696E7800711A04 /* Info.plist */,
 			);
@@ -304,13 +333,14 @@
 				C81E05411B73B6D5004E781D /* Settings */,
 				C89DE16B1B6A73E9004064C0 /* PAPTabBarController.swift */,
 			);
-			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		C8EAA8051B6985C700711A04 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				C8EAA8081B69866100711A04 /* PAPPhotoTimelineViewController.swift */,
+				A64704561C3B6847006541DA /* PAPItemTimelineViewController.swift */,
 				C8EAA8061B6985FC00711A04 /* PAPHomeViewController.swift */,
 				C89DE16D1B6A77DC004064C0 /* PAPAccountViewController.swift */,
 			);
@@ -527,6 +557,7 @@
 				C89DE16C1B6A73E9004064C0 /* PAPTabBarController.swift in Sources */,
 				C81E054B1B744F1E004E781D /* PAPLoadMoreCell.swift in Sources */,
 				C81E05491B744425004E781D /* PAPPhotoCell.swift in Sources */,
+				A64704571C3B6847006541DA /* PAPItemTimelineViewController.swift in Sources */,
 				C81E054D1B746AEA004E781D /* PAPProfileImageView.swift in Sources */,
 				C81E05401B73AC79004E781D /* PAPSettingsButtonItem.swift in Sources */,
 				C84EE83A1B779C3A009141D0 /* PAPPhotoDetailsFooterView.swift in Sources */,
@@ -536,15 +567,21 @@
 				C8481A451B70F31300E55085 /* PAPUtility.swift in Sources */,
 				C8CED75F1B6FBB9A006B6972 /* PAPCache.swift in Sources */,
 				C8CED75B1B6FB0FD006B6972 /* PAPActivityFeedViewController.swift in Sources */,
+				A647045D1C3C2F8F006541DA /* ComplexConstants.swift in Sources */,
 				C89DE1711B6A7C62004064C0 /* PAPPhotoDetailsViewController.swift in Sources */,
+				A64704641C3C326A006541DA /* NotificationHelper.swift in Sources */,
 				C8EAA8031B697F7300711A04 /* Reachability.swift in Sources */,
 				C89DE16A1B6A63F0004064C0 /* PAPConstants.swift in Sources */,
 				C8CED7581B6FA375006B6972 /* String+Common.swift in Sources */,
 				C81E05431B73B6F2004E781D /* PAPFindFriendsViewController.swift in Sources */,
+				A64704591C3C1338006541DA /* SettingsViewController.swift in Sources */,
+				A64704601C3C3050006541DA /* Colors.swift in Sources */,
+				A647045E1C3C2F8F006541DA /* Globals.swift in Sources */,
 				C89DE16E1B6A77DC004064C0 /* PAPAccountViewController.swift in Sources */,
 				C89DE1781B6A7D31004064C0 /* PAPBaseTextCell.swift in Sources */,
 				C8EAA8071B6985FC00711A04 /* PAPHomeViewController.swift in Sources */,
 				C84EE8381B764FBB009141D0 /* PAPEditPhotoViewController.swift in Sources */,
+				A64704621C3C3226006541DA /* Extensions.swift in Sources */,
 				C8EAA8091B69866100711A04 /* PAPPhotoTimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -680,7 +717,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.teklabsco.SwiftAnyItem;
 				PRODUCT_NAME = SwiftAnyItem;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAnyItem/SwiftAnyItem-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAnyItem/Support/SwiftAnyItem-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -701,7 +738,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.teklabsco.SwiftAnyItem;
 				PRODUCT_NAME = SwiftAnyItem;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAnyItem/SwiftAnyItem-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftAnyItem/Support/SwiftAnyItem-Bridging-Header.h";
 			};
 			name = Release;
 		};

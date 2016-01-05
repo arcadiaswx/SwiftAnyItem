@@ -49,8 +49,9 @@ class PAPFindFriendsViewController: PFQueryTableViewController, PAPFindFriendsCe
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         self.tableView.backgroundColor = UIColor.blackColor()
 
-        self.navigationItem.titleView = UIImageView(image: UIImage(named: "TitleFindFriends.png"))
-    
+        //self.navigationItem.titleView = UIImageView(image: UIImage(named: "TitleFindFriends.png"))
+        self.navigationItem.title = "Settings"
+        
         if self.navigationController!.viewControllers[0] == self {
             let dismissLeftBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("dismissPresentingViewController"))
             self.navigationItem.leftBarButtonItem = dismissLeftBarButtonItem
