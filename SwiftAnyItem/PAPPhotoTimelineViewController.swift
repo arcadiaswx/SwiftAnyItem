@@ -56,7 +56,7 @@ class PAPPhotoTimelineViewController: PFQueryTableViewController, PAPPhotoHeader
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
         super.viewDidLoad()
-        
+        print("I made it to the photoTimeLine.")
         let texturedBackgroundView = UIView(frame: self.view.bounds)
         texturedBackgroundView.backgroundColor = UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
         self.tableView.backgroundView = texturedBackgroundView
@@ -139,10 +139,13 @@ class PAPPhotoTimelineViewController: PFQueryTableViewController, PAPPhotoHeader
 
     override func queryForTable() -> PFQuery {
         if (PFUser.currentUser() == nil) {
+
             let query = PFQuery(className: self.parseClassName!)
             query.limit = 0
             return query
         }
+        
+        print("Inside the queryForTable")
         
         let followingActivitiesQuery = PFQuery(className: kPAPActivityClassKey)
         followingActivitiesQuery.whereKey(kPAPActivityTypeKey, equalTo: kPAPActivityTypeFollow)
@@ -166,6 +169,8 @@ class PAPPhotoTimelineViewController: PFQueryTableViewController, PAPPhotoHeader
         query.includeKey(kPAPPhotoUserKey)
         query.orderByDescending("createdAt")
 
+
+        
         // A pull-to-refresh should always trigger a network request.
         query.cachePolicy = PFCachePolicy.NetworkOnly
 
@@ -199,6 +204,7 @@ class PAPPhotoTimelineViewController: PFQueryTableViewController, PAPPhotoHeader
          You'll notice that these correspond to each of the fields used by the preceding query.
          */
 
+        print("Inside the back part of queryForTable")
         return query
     }
 

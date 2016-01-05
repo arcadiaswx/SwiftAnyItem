@@ -25,9 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NSURLConnectionDataDelega
 
         // ****************************************************************************
         // Parse initialization
-// FIXME: CrashReporting currently query to cydia://        ParseCrashReporting.enable()
-        //Parse.setApplicationId("PklSbwxITu46cOumt6tdWw8Jtg2urg0vj0CrbLr0", clientKey: "ML2sjwLC7k1RCujNCRP7fxG2HpUxtwzdIR1ElOe7")
-        Parse.setApplicationId("tqiw9KIfvtCmCBHkudCNwrAP3yOSMFhVsbRFmXbq", clientKey: "DIQoth7F7hTdw7xrkIxteIBKr3JdVOqY0kYbO7mZ")
+        // FIXME: CrashReporting currently query to cydia://        ParseCrashReporting.enable()
+
+        Parse.setApplicationId("MEwZrVk40TzEJTWnXlwKesObzwssd3TT1JBrpzgW", clientKey: "PJcwxxTnfwp3pHbN1gli1vmkLpPKEac1Eoc8EAyu")
         PFFacebookUtils.initializeFacebook()
 // TODO: V4      PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         // ****************************************************************************

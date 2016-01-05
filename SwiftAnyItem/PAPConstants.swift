@@ -15,8 +15,8 @@ enum PAPTabBarControllerViewControllerIndex: Int {
 
 let kPAPParseEmployeeAccounts = ["400680", "403902", "1225726", "4806789", "6409809", "12800553", "121800083", "500011038", "558159381", "723748661"]
 
-let kPAPUserDefaultsActivityFeedViewControllerLastRefreshKey = "com.parse.Anypic.userDefaults.activityFeedViewController.lastRefresh"
-let kPAPUserDefaultsCacheFacebookFriendsKey = "com.parse.Anypic.userDefaults.cache.facebookFriends"
+let kPAPUserDefaultsActivityFeedViewControllerLastRefreshKey = "com.parse.SwiftAnyItem.userDefaults.activityFeedViewController.lastRefresh"
+let kPAPUserDefaultsCacheFacebookFriendsKey = "com.parse.SwiftAnyItem.userDefaults.cache.facebookFriends"
 
 // MARK:- Launch URLs
 
@@ -24,15 +24,15 @@ let kPAPLaunchURLHostTakePicture = "camera"
 
 // MARK:- NSNotification
 
-let PAPAppDelegateApplicationDidReceiveRemoteNotification           = "com.parse.Anypic.appDelegate.applicationDidReceiveRemoteNotification"
-let PAPUtilityUserFollowingChangedNotification                      = "com.parse.Anypic.utility.userFollowingChanged"
-let PAPUtilityUserLikedUnlikedPhotoCallbackFinishedNotification     = "com.parse.Anypic.utility.userLikedUnlikedPhotoCallbackFinished"
-let PAPUtilityDidFinishProcessingProfilePictureNotification         = "com.parse.Anypic.utility.didFinishProcessingProfilePictureNotification"
-let PAPTabBarControllerDidFinishEditingPhotoNotification            = "com.parse.Anypic.tabBarController.didFinishEditingPhoto"
-let PAPTabBarControllerDidFinishImageFileUploadNotification         = "com.parse.Anypic.tabBarController.didFinishImageFileUploadNotification"
-let PAPPhotoDetailsViewControllerUserDeletedPhotoNotification       = "com.parse.Anypic.photoDetailsViewController.userDeletedPhoto"
-let PAPPhotoDetailsViewControllerUserLikedUnlikedPhotoNotification  = "com.parse.Anypic.photoDetailsViewController.userLikedUnlikedPhotoInDetailsViewNotification"
-let PAPPhotoDetailsViewControllerUserCommentedOnPhotoNotification   = "com.parse.Anypic.photoDetailsViewController.userCommentedOnPhotoInDetailsViewNotification"
+let PAPAppDelegateApplicationDidReceiveRemoteNotification           = "com.parse.SwiftAnyItem.appDelegate.applicationDidReceiveRemoteNotification"
+let PAPUtilityUserFollowingChangedNotification                      = "com.parse.SwiftAnyItem.utility.userFollowingChanged"
+let PAPUtilityUserLikedUnlikedPhotoCallbackFinishedNotification     = "com.parse.SwiftAnyItem.utility.userLikedUnlikedPhotoCallbackFinished"
+let PAPUtilityDidFinishProcessingProfilePictureNotification         = "com.parse.SwiftAnyItem.utility.didFinishProcessingProfilePictureNotification"
+let PAPTabBarControllerDidFinishEditingPhotoNotification            = "com.parse.SwiftAnyItem.tabBarController.didFinishEditingPhoto"
+let PAPTabBarControllerDidFinishImageFileUploadNotification         = "com.parse.SwiftAnyItem.tabBarController.didFinishImageFileUploadNotification"
+let PAPPhotoDetailsViewControllerUserDeletedPhotoNotification       = "com.parse.SwiftAnyItem.photoDetailsViewController.userDeletedPhoto"
+let PAPPhotoDetailsViewControllerUserLikedUnlikedPhotoNotification  = "com.parse.SwiftAnyItem.photoDetailsViewController.userLikedUnlikedPhotoInDetailsViewNotification"
+let PAPPhotoDetailsViewControllerUserCommentedOnPhotoNotification   = "com.parse.SwiftAnyItem.photoDetailsViewController.userCommentedOnPhotoInDetailsViewNotification"
 
 // MARK:- User Info Keys
 let PAPPhotoDetailsViewControllerUserLikedUnlikedPhotoNotificationUserInfoLikedKey = "liked"

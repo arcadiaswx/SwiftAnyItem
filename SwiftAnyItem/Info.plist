@@ -53,6 +53,19 @@
 			</array>
 		</dict>
 	</array>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb1656708937930822</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>1656708937930822</string>
+    <key>FacebookDisplayName</key>
+    <string>SwiftAnyItem</string>
 	<key>CFBundleVersion</key>
 	<string>${APP_VERSION}</string>
 	<key>FacebookAppID</key>
@@ -65,6 +78,10 @@
 	<array>
 		<string>cydia</string>
 		<string>fbauth</string>
+        <string>fbapi</string>
+        <string>fb-messenger-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
