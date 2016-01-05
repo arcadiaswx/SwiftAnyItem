@@ -12,7 +12,7 @@ class PAPHomeViewController: PAPPhotoTimelineViewController {
         super.viewDidLoad()
         
         //self.navigationItem.titleView = UIImageView(image: UIImage(named: "LogoNavigationBar.png"))
-
+        self.navigationItem.leftBarButtonItem = NotificationsButtonItem(target: self, action: Selector("settingsButtonAction:"))
         self.navigationItem.rightBarButtonItem = PAPSettingsButtonItem(target: self, action: Selector("settingsButtonAction:"))
         
         self.blankTimelineView = UIView(frame: self.tableView.bounds)

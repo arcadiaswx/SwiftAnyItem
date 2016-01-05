@@ -15,6 +15,7 @@
 		A64704601C3C3050006541DA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A647045F1C3C3050006541DA /* Colors.swift */; };
 		A64704621C3C3226006541DA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64704611C3C3226006541DA /* Extensions.swift */; };
 		A64704641C3C326A006541DA /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64704631C3C326A006541DA /* NotificationHelper.swift */; };
+		A64704661C3C83CE006541DA /* NotificationButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64704651C3C83CE006541DA /* NotificationButtonItem.swift */; };
 		C81E05401B73AC79004E781D /* PAPSettingsButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E053F1B73AC79004E781D /* PAPSettingsButtonItem.swift */; };
 		C81E05431B73B6F2004E781D /* PAPFindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E05421B73B6F2004E781D /* PAPFindFriendsViewController.swift */; };
 		C81E05451B73B923004E781D /* PAPFindFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E05441B73B923004E781D /* PAPFindFriendsCell.swift */; };
@@ -77,6 +78,7 @@
 		A647045F1C3C3050006541DA /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A64704611C3C3226006541DA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A64704631C3C326A006541DA /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
+		A64704651C3C83CE006541DA /* NotificationButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationButtonItem.swift; sourceTree = "<group>"; };
 		C81E053F1B73AC79004E781D /* PAPSettingsButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPSettingsButtonItem.swift; sourceTree = "<group>"; };
 		C81E05421B73B6F2004E781D /* PAPFindFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPFindFriendsViewController.swift; sourceTree = "<group>"; };
 		C81E05441B73B923004E781D /* PAPFindFriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPFindFriendsCell.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				C89DE1721B6A7C8C004064C0 /* PhotoDetailsViews */,
 				C89DE1751B6A7CF2004064C0 /* UITableViewCells */,
 				C81E053F1B73AC79004E781D /* PAPSettingsButtonItem.swift */,
+				A64704651C3C83CE006541DA /* NotificationButtonItem.swift */,
 				C84EE83B1B78A7C4009141D0 /* PAPImageView.swift */,
 				C81E054C1B746AEA004E781D /* PAPProfileImageView.swift */,
 			);
@@ -581,6 +584,7 @@
 				C89DE1781B6A7D31004064C0 /* PAPBaseTextCell.swift in Sources */,
 				C8EAA8071B6985FC00711A04 /* PAPHomeViewController.swift in Sources */,
 				C84EE8381B764FBB009141D0 /* PAPEditPhotoViewController.swift in Sources */,
+				A64704661C3C83CE006541DA /* NotificationButtonItem.swift in Sources */,
 				A64704621C3C3226006541DA /* Extensions.swift in Sources */,
 				C8EAA8091B69866100711A04 /* PAPPhotoTimelineViewController.swift in Sources */,
 			);

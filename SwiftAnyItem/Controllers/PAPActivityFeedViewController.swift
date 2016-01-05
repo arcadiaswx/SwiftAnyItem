@@ -259,9 +259,15 @@ class PAPActivityFeedViewController: PFQueryTableViewController, PAPActivityCell
         let myProfileAction = UIAlertAction(title: NSLocalizedString("My Profile", comment: ""), style: UIAlertActionStyle.Default, handler: { _ in
             self.navigationController!.pushViewController(PAPAccountViewController(user: PFUser.currentUser()!), animated: true)
         })
+        /*
         let findFriendsAction = UIAlertAction(title: NSLocalizedString("Find Friends", comment: ""), style: UIAlertActionStyle.Default, handler: { _ in
             self.navigationController!.pushViewController(PAPFindFriendsViewController(style: UITableViewStyle.Plain), animated: true)
         })
+        */
+        let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: ""), style: UIAlertActionStyle.Default, handler: { _ in
+            self.navigationController!.pushViewController(PAPFindFriendsViewController(style: UITableViewStyle.Plain), animated: true)
+        })
+
         let logOutAction = UIAlertAction(title: NSLocalizedString("Log Out", comment: ""), style: UIAlertActionStyle.Default, handler: { _ in
             // Log out user and present the login view controller
             (UIApplication.sharedApplication().delegate as! AppDelegate).logOut()
@@ -269,7 +275,7 @@ class PAPActivityFeedViewController: PFQueryTableViewController, PAPActivityCell
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
         
         actionController.addAction(myProfileAction)
-        actionController.addAction(findFriendsAction)
+        actionController.addAction(settingsAction)
         actionController.addAction(logOutAction)
         actionController.addAction(cancelAction)
         

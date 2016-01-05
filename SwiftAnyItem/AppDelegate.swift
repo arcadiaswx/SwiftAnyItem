@@ -184,7 +184,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NSURLConnectionDataDelega
         let emptyNavigationController: UINavigationController = UINavigationController()
         let activityFeedNavigationController: UINavigationController = UINavigationController(rootViewController: self.activityViewController!)
         
-        let homeTabBarItem: UITabBarItem = UITabBarItem(title: NSLocalizedString("Home", comment: "Home"), image: UIImage(named: "IconHome.png")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), selectedImage: UIImage(named: "IconHomeSelected.png")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal))
+        let homeTabBarItem: UITabBarItem = UITabBarItem(title: NSLocalizedString("Home", comment: "Home"), image: UIImage(named: "Home.png")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), selectedImage: UIImage(named: "HomeSelected.png")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal))
         homeTabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont.boldSystemFontOfSize(13)], forState: UIControlState.Selected)
         homeTabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red: 114.0/255.0, green: 114.0/255.0, blue: 114.0/255.0, alpha: 1.0), NSFontAttributeName: UIFont.boldSystemFontOfSize(13)], forState: UIControlState.Normal)
         
@@ -241,16 +241,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NSURLConnectionDataDelega
 
     // Set up appearance parameters to achieve Anypic's custom look and feel
     func setupAppearance() {
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
 
-        UINavigationBar.appearance().tintColor = UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 50.0/255.0, alpha: 1.0)
-        UINavigationBar.appearance().barTintColor = UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        //UINavigationBar.appearance().tintColor = UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 50.0/255.0, alpha: 1.0)
         
-        UINavigationBar.appearance().titleTextAttributes = [ NSForegroundColorAttributeName: UIColor.whiteColor() ]
+        UINavigationBar.appearance().barTintColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        //UINavigationBar.appearance().barTintColor = UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+        UINavigationBar.appearance().titleTextAttributes = [ NSForegroundColorAttributeName: UIColor.grayColor() ]
         
-        UIButton.appearanceWhenContainedInInstancesOfClasses([UINavigationBar.self]).setTitleColor(UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 50.0/255.0, alpha: 1.0), forState: UIControlState.Normal)
+        UIButton.appearanceWhenContainedInInstancesOfClasses([UINavigationBar.self]).setTitleColor(UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0), forState: UIControlState.Normal)
+        //UIButton.appearanceWhenContainedInInstancesOfClasses([UINavigationBar.self]).setTitleColor(UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 50.0/255.0, alpha: 1.0), forState: UIControlState.Normal)
         
-        UIBarButtonItem.appearance().setTitleTextAttributes([ NSForegroundColorAttributeName: UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 50.0/255.0, alpha: 1.0) ], forState: UIControlState.Normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([ NSForegroundColorAttributeName: UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0) ], forState: UIControlState.Normal)
+        //UIBarButtonItem.appearance().setTitleTextAttributes([ NSForegroundColorAttributeName: UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 50.0/255.0, alpha: 1.0) ], forState: UIControlState.Normal)
         
         UISearchBar.appearance().tintColor = UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 50.0/255.0, alpha: 1.0)
     }
