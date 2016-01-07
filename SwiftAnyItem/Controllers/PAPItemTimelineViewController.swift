@@ -14,6 +14,7 @@ class PAPItemTimelineViewController: PFQueryTableViewController, PAPPhotoHeaderV
         defaultNotificationCenter.removeObserver(self, name: PAPTabBarControllerDidFinishEditingPhotoNotification, object: nil)
         defaultNotificationCenter.removeObserver(self, name: PAPUtilityUserFollowingChangedNotification, object: nil)
         defaultNotificationCenter.removeObserver(self, name: PAPPhotoDetailsViewControllerUserLikedUnlikedPhotoNotification, object: nil)
+        defaultNotificationCenter.removeObserver(self, name: PAPItemDetailsViewControllerUserLikedUnlikedItemNotification, object: nil)
         defaultNotificationCenter.removeObserver(self, name: PAPUtilityUserLikedUnlikedPhotoCallbackFinishedNotification, object: nil)
         defaultNotificationCenter.removeObserver(self, name: PAPPhotoDetailsViewControllerUserCommentedOnPhotoNotification, object: nil)
         defaultNotificationCenter.removeObserver(self, name: PAPPhotoDetailsViewControllerUserDeletedPhotoNotification, object: nil)

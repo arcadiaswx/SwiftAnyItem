@@ -4,6 +4,8 @@ import AMPopTip
 
 class Globals {
     var window: UIWindow?
+    var navigationController: UINavigationController?
+    
     class func numericToolbar(target: AnyObject, selector: Selector, barColor: UIColor = UIColor.whiteColor(), textColor: UIColor = UIColor.mainColor()) -> UIToolbar {
         let numberToolbar = UIToolbar(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, 50))
         numberToolbar.barStyle = .BlackTranslucent
@@ -87,4 +89,5 @@ class Globals {
             self.window?.rootViewController = controller
         }
     }
+
 }

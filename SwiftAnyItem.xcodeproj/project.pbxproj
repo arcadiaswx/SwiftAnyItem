@@ -16,6 +16,9 @@
 		A64704621C3C3226006541DA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64704611C3C3226006541DA /* Extensions.swift */; };
 		A64704641C3C326A006541DA /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64704631C3C326A006541DA /* NotificationHelper.swift */; };
 		A64704661C3C83CE006541DA /* NotificationButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64704651C3C83CE006541DA /* NotificationButtonItem.swift */; };
+		A64704681C3EC376006541DA /* PAPItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64704671C3EC376006541DA /* PAPItemDetailsViewController.swift */; };
+		A647046A1C3EC462006541DA /* PAPItemDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64704691C3EC462006541DA /* PAPItemDetailsHeaderView.swift */; };
+		A647046C1C3EC478006541DA /* PAPItemDetailsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A647046B1C3EC478006541DA /* PAPItemDetailsFooterView.swift */; };
 		C81E05401B73AC79004E781D /* PAPSettingsButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E053F1B73AC79004E781D /* PAPSettingsButtonItem.swift */; };
 		C81E05431B73B6F2004E781D /* PAPFindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E05421B73B6F2004E781D /* PAPFindFriendsViewController.swift */; };
 		C81E05451B73B923004E781D /* PAPFindFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E05441B73B923004E781D /* PAPFindFriendsCell.swift */; };
@@ -79,6 +82,9 @@
 		A64704611C3C3226006541DA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A64704631C3C326A006541DA /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		A64704651C3C83CE006541DA /* NotificationButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationButtonItem.swift; sourceTree = "<group>"; };
+		A64704671C3EC376006541DA /* PAPItemDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPItemDetailsViewController.swift; sourceTree = "<group>"; };
+		A64704691C3EC462006541DA /* PAPItemDetailsHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPItemDetailsHeaderView.swift; sourceTree = "<group>"; };
+		A647046B1C3EC478006541DA /* PAPItemDetailsFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPItemDetailsFooterView.swift; sourceTree = "<group>"; };
 		C81E053F1B73AC79004E781D /* PAPSettingsButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPSettingsButtonItem.swift; sourceTree = "<group>"; };
 		C81E05421B73B6F2004E781D /* PAPFindFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPFindFriendsViewController.swift; sourceTree = "<group>"; };
 		C81E05441B73B923004E781D /* PAPFindFriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPFindFriendsCell.swift; sourceTree = "<group>"; };
@@ -213,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				C89DE1701B6A7C62004064C0 /* PAPPhotoDetailsViewController.swift */,
+				A64704671C3EC376006541DA /* PAPItemDetailsViewController.swift */,
 			);
 			name = Detail;
 			sourceTree = "<group>";
@@ -221,7 +228,9 @@
 			isa = PBXGroup;
 			children = (
 				C89DE1731B6A7CC1004064C0 /* PAPPhotoDetailsHeaderView.swift */,
+				A64704691C3EC462006541DA /* PAPItemDetailsHeaderView.swift */,
 				C84EE8391B779C3A009141D0 /* PAPPhotoDetailsFooterView.swift */,
+				A647046B1C3EC478006541DA /* PAPItemDetailsFooterView.swift */,
 			);
 			name = PhotoDetailsViews;
 			sourceTree = "<group>";
@@ -561,13 +570,16 @@
 				C81E054B1B744F1E004E781D /* PAPLoadMoreCell.swift in Sources */,
 				C81E05491B744425004E781D /* PAPPhotoCell.swift in Sources */,
 				A64704571C3B6847006541DA /* PAPItemTimelineViewController.swift in Sources */,
+				A647046C1C3EC478006541DA /* PAPItemDetailsFooterView.swift in Sources */,
 				C81E054D1B746AEA004E781D /* PAPProfileImageView.swift in Sources */,
+				A64704681C3EC376006541DA /* PAPItemDetailsViewController.swift in Sources */,
 				C81E05401B73AC79004E781D /* PAPSettingsButtonItem.swift in Sources */,
 				C84EE83A1B779C3A009141D0 /* PAPPhotoDetailsFooterView.swift in Sources */,
 				C84EE83C1B78A7C4009141D0 /* PAPImageView.swift in Sources */,
 				C81E05451B73B923004E781D /* PAPFindFriendsCell.swift in Sources */,
 				C8EAA7D21B696E7800711A04 /* AppDelegate.swift in Sources */,
 				C8481A451B70F31300E55085 /* PAPUtility.swift in Sources */,
+				A647046A1C3EC462006541DA /* PAPItemDetailsHeaderView.swift in Sources */,
 				C8CED75F1B6FBB9A006B6972 /* PAPCache.swift in Sources */,
 				C8CED75B1B6FB0FD006B6972 /* PAPActivityFeedViewController.swift in Sources */,
 				A647045D1C3C2F8F006541DA /* ComplexConstants.swift in Sources */,

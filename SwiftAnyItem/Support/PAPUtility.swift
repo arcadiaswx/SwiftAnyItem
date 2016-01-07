@@ -73,6 +73,71 @@ class PAPUtility {
         }
     }
 
+    
+    class func likeItemInBackground(item: PFObject, block completionBlock: ((succeeded: Bool, error: NSError?) -> Void)?) {
+        let queryExistingLikes = PFQuery(className: kPAPActivityClassKey)
+        queryExistingLikes.whereKey(kPAPActivityItemKey, equalTo: item)
+        queryExistingLikes.whereKey(kPAPActivityTypeKey, equalTo: kPAPActivityTypeLike)
+        queryExistingLikes.whereKey(kPAPActivityFromUserKey, equalTo: PFUser.currentUser()!)
+        queryExistingLikes.cachePolicy = PFCachePolicy.NetworkOnly
+        queryExistingLikes.findObjectsInBackgroundWithBlock { (activities, error) in
+            if error == nil {
+                for activity in activities as! [PFObject] {
+                    // FIXME: To be removed! this is synchronous!                    activity.delete()
+                    activity.deleteInBackground()
+                }
+            }
+            
+            // proceed to creating new like
+            let likeActivity = PFObject(className: kPAPActivityClassKey)
+            likeActivity.setObject(kPAPActivityTypeLike, forKey: kPAPActivityTypeKey)
+            likeActivity.setObject(PFUser.currentUser()!, forKey: kPAPActivityFromUserKey)
+            likeActivity.setObject(item.objectForKey(kPAPItemUserKey)!, forKey: kPAPActivityToUserKey)
+            likeActivity.setObject(item, forKey: kPAPActivityItemKey)
+            
+            let likeACL = PFACL(user: PFUser.currentUser()!)
+            likeACL.setPublicReadAccess(true)
+            likeACL.setWriteAccess(true, forUser: item.objectForKey(kPAPItemUserKey) as! PFUser)
+            likeActivity.ACL = likeACL
+            
+            likeActivity.saveInBackgroundWithBlock { (succeeded, error) in
+                if completionBlock != nil {
+                    completionBlock!(succeeded: succeeded.boolValue, error: error)
+                }
+                
+                // refresh cache
+                let query = PAPUtility.queryForActivitiesOnItem(item, cachePolicy: PFCachePolicy.NetworkOnly)
+                query.findObjectsInBackgroundWithBlock { (objects, error) in
+                    if error == nil {
+                        var likers = [PFUser]()
+                        var commenters = [PFUser]()
+                        
+                        var isLikedByCurrentUser = false
+                        
+                        for activity in objects as! [PFObject] {
+                            if (activity.objectForKey(kPAPActivityTypeKey) as! String) == kPAPActivityTypeLike && activity.objectForKey(kPAPActivityFromUserKey) != nil {
+                                likers.append(activity.objectForKey(kPAPActivityFromUserKey) as! PFUser)
+                            } else if (activity.objectForKey(kPAPActivityTypeKey) as! String) == kPAPActivityTypeComment && activity.objectForKey(kPAPActivityFromUserKey) != nil {
+                                commenters.append(activity.objectForKey(kPAPActivityFromUserKey) as! PFUser)
+                            }
+                            
+                            if (activity.objectForKey(kPAPActivityFromUserKey) as? PFUser)?.objectId == PFUser.currentUser()!.objectId {
+                                if (activity.objectForKey(kPAPActivityTypeKey) as! String) == kPAPActivityTypeLike {
+                                    isLikedByCurrentUser = true
+                                }
+                            }
+                        }
+                        
+                        PAPCache.sharedCache.setAttributesForItem(item, likers: likers, commenters: commenters, likedByCurrentUser: isLikedByCurrentUser)
+                    }
+                    
+                    NSNotificationCenter.defaultCenter().postNotificationName(PAPUtilityUserLikedUnlikedItemCallbackFinishedNotification, object: item, userInfo: [PAPItemDetailsViewControllerUserLikedUnlikedItemNotificationUserInfoLikedKey: succeeded.boolValue])
+                }
+                
+            }
+        }
+    }
+    
     class func unlikePhotoInBackground(photo: PFObject, block completionBlock: ((succeeded: Bool, error: NSError?) -> Void)?) {
         let queryExistingLikes = PFQuery(className: kPAPActivityClassKey)
         queryExistingLikes.whereKey(kPAPActivityPhotoKey, equalTo: photo)
@@ -128,6 +193,62 @@ class PAPUtility {
         }
     }
 
+    class func unlikeItemInBackground(item: PFObject, block completionBlock: ((succeeded: Bool, error: NSError?) -> Void)?) {
+        let queryExistingLikes = PFQuery(className: kPAPActivityClassKey)
+        queryExistingLikes.whereKey(kPAPActivityItemKey, equalTo: item)
+        queryExistingLikes.whereKey(kPAPActivityTypeKey, equalTo: kPAPActivityTypeLike)
+        queryExistingLikes.whereKey(kPAPActivityFromUserKey, equalTo: PFUser.currentUser()!)
+        queryExistingLikes.cachePolicy = PFCachePolicy.NetworkOnly
+        queryExistingLikes.findObjectsInBackgroundWithBlock { (activities, error) in
+            if error == nil {
+                for activity in activities as! [PFObject] {
+                    // FIXME: To be removed! this is synchronous!                    activity.delete()
+                    activity.deleteInBackground()
+                }
+                
+                if completionBlock != nil {
+                    completionBlock!(succeeded: true, error: nil)
+                }
+                
+                // refresh cache
+                let query = PAPUtility.queryForActivitiesOnItem(item, cachePolicy: PFCachePolicy.NetworkOnly)
+                query.findObjectsInBackgroundWithBlock { (objects, error) in
+                    if error == nil {
+                        
+                        var likers = [PFUser]()
+                        var commenters = [PFUser]()
+                        
+                        var isLikedByCurrentUser = false
+                        
+                        for activity in objects as! [PFObject] {
+                            if (activity.objectForKey(kPAPActivityTypeKey) as! String) == kPAPActivityTypeLike {
+                                likers.append(activity.objectForKey(kPAPActivityFromUserKey) as! PFUser)
+                            } else if (activity.objectForKey(kPAPActivityTypeKey) as! String) == kPAPActivityTypeComment {
+                                commenters.append(activity.objectForKey(kPAPActivityFromUserKey) as! PFUser)
+                            }
+                            
+                            if (activity.objectForKey(kPAPActivityFromUserKey) as! PFUser).objectId == PFUser.currentUser()!.objectId {
+                                if (activity.objectForKey(kPAPActivityTypeKey) as! String) == kPAPActivityTypeLike {
+                                    isLikedByCurrentUser = true
+                                }
+                            }
+                        }
+                        
+                        PAPCache.sharedCache.setAttributesForItem(item, likers: likers, commenters: commenters, likedByCurrentUser: isLikedByCurrentUser)
+                    }
+                    
+                    NSNotificationCenter.defaultCenter().postNotificationName(PAPUtilityUserLikedUnlikedItemCallbackFinishedNotification, object: item, userInfo: [PAPItemDetailsViewControllerUserLikedUnlikedItemNotificationUserInfoLikedKey: false])
+                }
+                
+            } else {
+                if completionBlock != nil {
+                    completionBlock!(succeeded: false, error: error)
+                }
+            }
+        }
+    }
+    
+    
     // MARK Facebook
 
     class func processFacebookProfilePictureData(newProfilePictureData: NSData) {
@@ -298,6 +419,25 @@ class PAPUtility {
         return query
     }
 
+    // MARK Activities
+    
+    class func queryForActivitiesOnItem(item: PFObject, cachePolicy: PFCachePolicy) -> PFQuery {
+        let queryLikes: PFQuery = PFQuery(className: kPAPActivityClassKey)
+        queryLikes.whereKey(kPAPActivityItemKey, equalTo: item)
+        queryLikes.whereKey(kPAPActivityTypeKey, equalTo: kPAPActivityTypeLike)
+        
+        let queryComments = PFQuery(className: kPAPActivityClassKey)
+        queryComments.whereKey(kPAPActivityItemKey, equalTo: item)
+        queryComments.whereKey(kPAPActivityTypeKey, equalTo: kPAPActivityTypeComment)
+        
+        let query = PFQuery.orQueryWithSubqueries([queryLikes,queryComments])
+        query.cachePolicy = cachePolicy
+        query.includeKey(kPAPActivityFromUserKey)
+        query.includeKey(kPAPActivityItemKey)
+        
+        return query
+    }
+    
     // MARK:- Shadow Rendering
 
     class func drawSideAndBottomDropShadowForRect(rect: CGRect, inContext context: CGContextRef) {
@@ -359,4 +499,5 @@ class PAPUtility {
         // Save context
         CGContextRestoreGState(context)
     }
+
 }
